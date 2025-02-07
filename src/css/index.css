@@ -63,7 +63,13 @@ button:focus-visible {
     color: #747bff;
   }
   button {
-    background-color: #f9f9f9;
+    background-color: #f1f1f1;
+    padding: 0.7rem;
+    margin: 0.5rem;
+  }
+  input {
+    height: 1rem;
+    width: 1rem;
   }
 }
 
@@ -72,4 +78,23 @@ button:focus-visible {
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+}
+
+.pdf-export {
+  top: -10000px;
+  position: absolute;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem;
+}
+
+.board {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem;
 }
