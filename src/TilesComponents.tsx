@@ -73,7 +73,7 @@ export const TheBoard = ({ boardHash, fixedCenter, avoidToxic, avoidDuplicates, 
             </div>
         </div>
         <div>Board ID: {getBoardHash(fixedCenter ?
-            [tilesArray[0], tilesArray[1], tilesArray[2], tilesArray[3], "/src/tiles/A8", tilesArray[4], tilesArray[5], tilesArray[6], tilesArray[7]] :
+            [tilesArray[0], tilesArray[1], tilesArray[2], tilesArray[3], a8, tilesArray[4], tilesArray[5], tilesArray[6], tilesArray[7]] :
             [...tilesArray.filter((_, idx) => idx < 8)],
             fixedCenter ?
                 [rotationsArray[0], rotationsArray[1], rotationsArray[2], rotationsArray[3], 0, rotationsArray[4], rotationsArray[5], rotationsArray[6], rotationsArray[7]]
