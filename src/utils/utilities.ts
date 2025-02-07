@@ -37,9 +37,49 @@ export const isValidHash = (hash: string) => {
 }
 
 export const getTileInfoFromBoardHash = (hash: string) => {
-    return hash.split('|').map((entry) => {
-        return `/src/tiles/${entry.split('x')[0]}.jpg`;
+    const tileNames = hash.split('|').map((entry) => `${entry.split('x')[0]}`);
+    const mappedNames = tileNames.map((tile) => {
+        switch (tile) {
+            case 'A1':
+                return a1;
+            case 'A2':
+                return a2;
+            case 'A3':
+                return a3;
+            case 'A4':
+                return a4;
+            case 'A5':
+                return a5;
+            case 'A6':
+                return a6;
+            case 'A7':
+                return a7;
+            case 'A8':
+                return a8;
+            case 'A9':
+                return a9;
+            case 'B1':
+                return b1;
+            case 'B2':
+                return b2;
+            case 'B3':
+                return b3;
+            case 'B4':
+                return b4;
+            case 'B5':
+                return b5;
+            case 'B6':
+                return b6;
+            case 'B7':
+                return b7;
+            case 'B9':
+                return b9;
+            default:
+                ""
+        }
     });
+
+    return mappedNames;
 }
 
 export const getRotationInfoFromBoardHash = (hash: string) => {
