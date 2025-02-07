@@ -29,7 +29,7 @@ export const getRandomRotation = () => {
 };
 
 export const getBoardHash = (tilesArray: string[], rotationArray: number[]) => {
-    return tilesArray.map((entry, index) => `${entry.substring(entry.lastIndexOf("/") + 1, entry.lastIndexOf("-"))}_${rotationArray[index]}`).join('|');
+    return tilesArray.map((entry, index) => `${entry.substring(entry.lastIndexOf("/") + 1, entry.lastIndexOf("/") + 3)}_${rotationArray[index]}`).join('|');
 }
 
 export const isValidHash = (hash: string) => {
