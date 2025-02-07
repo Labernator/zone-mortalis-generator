@@ -29,15 +29,15 @@ export const getRandomRotation = () => {
 };
 
 export const getBoardHash = (tilesArray: string[], rotationArray: number[]) => {
-    return tilesArray.map((entry, index) => `${entry.substring(entry.lastIndexOf("/") + 1, entry.lastIndexOf("-"))}` + 'x' + rotationArray[index]).join('|');
+    return tilesArray.map((entry, index) => `${entry.substring(entry.lastIndexOf("/") + 1, entry.lastIndexOf("-"))}_${rotationArray[index]}`).join('|');
 }
 
 export const isValidHash = (hash: string) => {
-    return hash.split('|').length === 9 && hash.split('x').length === 10;
+    return hash.split('|').length === 9 && hash.split('_').length === 10;
 }
 
 export const getTileInfoFromBoardHash = (hash: string) => {
-    const tileNames = hash.split('|').map((entry) => `${entry.split('x')[0]}`);
+    const tileNames = hash.split('|').map((entry) => `${entry.split('_')[0]}`);
     const mappedNames = tileNames.map((tile) => {
         switch (tile) {
             case 'A1':
@@ -84,7 +84,7 @@ export const getTileInfoFromBoardHash = (hash: string) => {
 
 export const getRotationInfoFromBoardHash = (hash: string) => {
     return hash.split('|').map((entry) => {
-        return parseInt(entry.split('x')[1], 10);
+        return parseInt(entry.split('_')[1], 10);
     });
 }
 
