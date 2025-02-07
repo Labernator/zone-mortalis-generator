@@ -2,7 +2,7 @@ import { useState } from 'react'
 import a8 from './tiles/A8.jpg'
 import { getTileInfoFromBoardHash, getRotationInfoFromBoardHash, getRandomRotation, getBoardHash, getTilesArray } from './utils/utilities';
 
-export const Tile = ({ tileName, rotation }: { tileName: string; rotation: number }) => <img src={tileName} alt="React logo" style={{ width: "200px", height: "200px", transform: `rotate(${rotation}deg)` }} />;
+export const Tile = ({ tileName, rotation }: { tileName: string; rotation: number }) => <img src={tileName} alt={`tile_${tileName}`} style={{ width: "200px", height: "200px", transform: `rotate(${rotation}deg)` }} />;
 
 function useForceUpdate() {
     const [value, setValue] = useState(0); // integer state
@@ -53,6 +53,7 @@ export const RandomBoard = ({ boardHash }: { boardHash?: string }) => {
 export const TheBoard = ({ boardHash, fixedCenter, avoidToxic, avoidDuplicates, css }: { boardHash: string; fixedCenter: boolean; avoidToxic: boolean; avoidDuplicates: boolean; css?: string }) => {
     const tilesArray = boardHash ? getTileInfoFromBoardHash(boardHash) : getTilesArray(fixedCenter, avoidToxic, avoidDuplicates);
     const rotationsArray = boardHash ? getRotationInfoFromBoardHash(boardHash) : Array.from({ length: 9 }, () => getRandomRotation());
+    console.log(tilesArray);
     return <div className={`board ${css}`}>
         <div style={{ width: "600px", height: "600px" }}>
             <div style={{ width: "600px", height: "200px" }}>
