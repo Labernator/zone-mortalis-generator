@@ -1,1 +1,1 @@
-{"root":["./src/app.tsx","./src/tilescomponents.tsx","./src/declaration.d.ts","./src/main.tsx","./src/vite-env.d.ts","./src/utils/utilities.ts"],"version":"5.7.3"}
+{"root":["./src/tilescomponents.tsx","./src/declaration.d.ts","./src/main.tsx","./src/pdfprovider.tsx","./src/vite-env.d.ts","./src/components/loadingindicator.tsx","./src/utils/utilities.ts"],"version":"5.7.3"}
